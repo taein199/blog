@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEV & PLAY</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Settings Menu -->
+    <div class="settings-container">
+        <button id="settingsBtn" class="settings-btn" aria-label="Settings">⚙️</button>
+        <div id="settingsMenu" class="settings-menu hidden">
+            <h4>블로그 설정</h4>
+            <div class="setting-item">
+                <span>다크 모드</span>
+                <label class="switch">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+            <div class="setting-item">
+                <span>글자 크기</span>
+                <div class="font-size-controls">
+                    <button id="fontDecrease" aria-label="Decrease font size">A-</button>
+                    <button id="fontIncrease" aria-label="Increase font size">A+</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Left Sidebar (Fixed) -->
+    <aside class="sidebar">
+        <div class="sidebar-bg"></div>
+        <div class="sidebar-content">
+            <h1 class="fade-up">taein's roblox blog</h1>
+            <p class="fade-up delay-1">태인이의 블로그</p>
+        </div>
+    </aside>
+
+    <!-- Right Main Content -->
+    <main class="main-content">
+        <nav class="top-nav">
+            <ul>
+                <li><a href="#" class="nav-link">HOME</a></li>
+                <li><a href="#" class="nav-link">ABOUT</a></li>
+                <li><a href="#" class="nav-link">ARCHIVE</a></li>
+                <li><a href="#" class="nav-link">RSS</a></li>
+            </ul>
+        </nav>
+
+        <div class="content-wrapper">
+            <header class="blog-header">
+                <h2 class="fade-up">Forsaken roblox 블로그</h2>
+                <p class="fade-up delay-1">포세이큰 하는 태인이가 쓰는 쉬운 게임 이야기</p>
+            </header>
+
+            <article class="post scroll-reveal">
+                <h3 class="post-title">포세이큰 셰들레츠키 100% 사용법</h3>
+                <p>로블록스 게임 *포세이큰(Forsaken)*의 셰들레츠키는 과거의 죄를 속죄하기 위해 자발적으로 죽음의 게임에 참여한 입체적인 서사의 무료 생존자 캐릭터입니다.</p>
+                <p>그는 조건 없는 스턴기인 '휘두르기(Q)'와 뛰어난 자힐기인 '후라이드 치킨(E)'을 보유하여 뛰어난 최전방 유지력을 자랑하는 센티널 클래스입니다.</p>
+                <p>특히 자신의 내면 속 죄책감과 자기혐오가 실체화된 살인마 1x1x1x1의 창조주이기도 하며, 둘만 남았을 때 전용 테마곡인 CREATION OF HATRED가 재생되는 독특한 기믹을
+                    가지고 있습니다.</p>
+                <p>파이썬을 활용해 마우스 클릭 시 자동으로 Q 키가 입력되도록 매크로 코드를 구현하면, 복잡한 컨트롤 없이도 셰들레츠키의 핵심 스턴기를 즉시 발동할 수 있습니다. 이를 통해 까다로운
+                    기습 타이밍을 완벽하게 잡아내어, 셰들레츠키의 강력한 센티널 성능을 100% 이끌어낼 수 있습니다.</p>
+
+                <div class="code-container hover-effect">
+                    <pre><code class="language-python"><span class="keyword">import</span> os
+<span class="keyword">import</span> time
+<span class="keyword">import</span> keyboard
+<span class="keyword">import</span> mouse
+
+<span class="keyword">def</span> <span class="function">init_system</span>():
+    <span class="comment">"""터미널을 깔끔하게 정리하고 부팅 시스템을 출력합니다."""</span>
+    os.system(<span class="string">'cls'</span> <span class="keyword">if</span> os.name == <span class="string">'nt'</span> <span class="keyword">else</span> <span class="string">'clear'</span>)
+    <span class="function">print</span>(<span class="string">"="</span> * <span class="number">60</span>)
+    <span class="function">print</span>(<span class="string">"   🔥 SHEDLETSKY HARDWARE-LEVEL TRIGGER SYSTEM [v2.0] 🔥"</span>)
+    <span class="function">print</span>(<span class="string">"="</span> * <span class="number">60</span>)
+    <span class="function">print</span>(<span class="string">" [STATUS] RUNNING..."</span>)
+    <span class="function">print</span>(<span class="string">" [MAPPING] MOUSE_LEFT_CLICK ──> HARDWARE_Q_INJECTION"</span>)
+    <span class="function">print</span>(<span class="string">" >> [F8] 키를 누르면 매크로가 즉시 안전하게 종료됩니다."</span>)
+    <span class="function">print</span>(<span class="string">"-"</span> * <span class="number">60</span>)
+
+<span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:
+    init_system()
+    
+    <span class="comment"># 무한 루프를 돌며 OS 레벨에서 입력을 실시간으로 가로챔</span>
+    <span class="keyword">while</span> <span class="keyword">True</span>:
+        <span class="keyword">try</span>:
+            <span class="comment"># 안전장치: 게임 하다가 끄고 싶을 때 F8 누르면 바로 종료</span>
+            <span class="keyword">if</span> keyboard.is_pressed(<span class="string">'f8'</span>):
+                <span class="function">print</span>(<span class="string">"\n[☠️ SYSTEM] Trigger System safely terminated."</span>)
+                <span class="keyword">break</span>
+                
+            <span class="comment"># 마우스 왼쪽 버튼이 클릭되었는지 감지</span>
+            <span class="keyword">if</span> mouse.is_pressed(button=<span class="string">'left'</span>):
+                <span class="function">print</span>(<span class="string">"[⚡ TRIGGER] Left Click! Instantly forcing 'Q' key..."</span>)
+                
+                <span class="comment"># 게임 엔진이 인식할 수 있도록 실제 키보드를 누르는 신호를 다이렉트로 전송</span>
+                keyboard.send(<span class="string">'q'</span>)
+                
+                <span class="comment"># 연속 입력(광클) 방지 및 게임 서버 오차가 없도록 아주 미세한 딜레이 부여</span>
+                time.sleep(<span class="number">0.15</span>)
+                
+        <span class="keyword">except</span> Exception <span class="keyword">as</span> e:
+            <span class="comment"># 예외 발생 시 크래시 방지</span>
+            <span class="keyword">pass</span>
+            
+        <span class="comment"># CPU 점유율 과부하를 막기 위한 미세한 휴식</span>
+        time.sleep(<span class="number">0.01</span>)</code></pre>
+                </div>
+            </article>
+
+            <div class="divider scroll-reveal">***</div>
+
+
+            <div class="mini-notice-box scroll-reveal">
+                <h3>📢 Tae-in's 한마디</h3>
+                <p>1. 현재 Python(Ursina)을 활용한 신작 3D 게임 물리 엔진 구현 중!</p>
+                <p>2. 이번 주말에는 블로그 방명록 기능을 JS로 연동할 예정입니다.</p>
+                <p>3. 로블록스 디벨로퍼 가이드 분석 글 업로드 완료!</p>
+                <p>4. 버그 제보나 피드백은 언제나 환영합니다.</p>
+                <p>5. 방문해 주셔서 감사합니다. 즐거운 하루 되세요! 🎮</p>
+            </div>
+
+            <div class="comments-section scroll-reveal">
+                <h3>💬 방명록 및 댓글</h3>
+                <form id="commentForm">
+                    <input type="text" id="commentName" placeholder="닉네임 (태인, 셰들레츠키 등)" required>
+                    <textarea id="commentText" placeholder="댓글을 남겨주세요! 소중한 피드백은 큰 힘이 됩니다." required></textarea>
+                    <button type="submit">댓글 등록하기</button>
+                </form>
+                <div id="commentsList" class="comments-list">
+                    <!-- JS로 댓글 동적 렌더링 -->
+                </div>
+            </div>
+
+            <footer class="footer scroll-reveal">
+                <div class="footer-content">
+                    <p class="copyright-title">&copy; 2026 taein. All rights reserved.</p>
+                    <p class="license-badge">Licensed under the <strong>MIT License</strong></p>
+
+                    <details class="license-details">
+                        <summary>라이선스 상세 보기 (MIT License)</summary>
+                        <div class="license-text">
+                            Copyright (c) 2026 taein<br><br>
+                            Permission is hereby granted, free of charge, to any person obtaining a copy of this
+                            software and associated documentation files (the "Software"), to deal in the Software
+                            without restriction, including without limitation the rights to use, copy, modify, merge,
+                            publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons
+                            to whom the Software is furnished to do so, subject to the following conditions:<br><br>
+                            The above copyright notice and this permission notice shall be included in all copies or
+                            substantial portions of the Software.<br><br>
+                            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+                            INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+                            PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE
+                            FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+                            OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+                            DEALINGS IN THE SOFTWARE.
+                        </div>
+                    </details>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
